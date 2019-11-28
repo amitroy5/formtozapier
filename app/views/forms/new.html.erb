@@ -1,0 +1,15 @@
+<div class="booyah-box col-10 offset-1">
+  <h1>Enter Your Place Details</h1>
+  <%= simple_form_for @form do |f| %>
+    <%= f.input :formname, label: 'Name of Form' %>
+    <%= f.input :zapierurl, label: 'Zapier URL' %>
+    <%= f.input :input1name, label: 'Input 1 Name' %>
+    <%= f.input :input1dropdown, label: 'Input 1 Form Type' %>
+    <%= f.input :input2name %>
+    <%= f.input :input2dropdown %>
+    <%= f.input :input3name %>
+    <%= f.input :input3dropdown %>
+    <br />
+    <%= f.submit 'Create', class: 'btn btn-primary' %>
+  <% end %>
+</div>
