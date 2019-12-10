@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_28_004432) do
+ActiveRecord::Schema.define(version: 2019_12_05_023831) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "form_fields", force: :cascade do |t|
+    t.integer "min"
+    t.integer "max"
+    t.integer "formable_id"
+    t.boolean "required"
+    t.string "label"
+    t.string "formable_type"
+    t.string "type"
+  end
+
+  create_table "form_values", force: :cascade do |t|
+    t.string "value"
+    t.integer "form_field_id"
+    t.integer "submittable_id"
+    t.string "submittable_type"
+  end
 
   create_table "forms", force: :cascade do |t|
     t.string "formname"
@@ -38,6 +55,18 @@ ActiveRecord::Schema.define(version: 2019_11_28_004432) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "zapier_forms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "zapier_submissions", force: :cascade do |t|
+    t.integer "zapier_form_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
