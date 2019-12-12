@@ -1,0 +1,11 @@
+<%= simple_form_for @zapier_form do |f| %>
+  <%= f.simple_fields_for :form_fields do |form_field| %>
+    <%= render 'form_field_fields', f: form_field %>
+  <% end %>
+
+  <%= f.input :name %>
+  <div id="links">
+    <p><strong><%= link_to_add_association 'Add Field', f, :form_fields %></strong></p>
+  </div>
+  <%= f.submit %>
+<% end %>
