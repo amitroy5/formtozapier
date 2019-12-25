@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 2019_12_05_023831) do
 
   create_table "zapier_forms", force: :cascade do |t|
     t.string "name"
+    t.string "zapierapi"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -30,6 +30,6 @@ class ZapierFormsController < ApplicationController
   private
 
   def zapier_form_params
-    params.require(:zapier_form).permit(%i[id name] + form_fields_attributes)
+    params.require(:zapier_form).permit(%i[id name zapierapi] + form_fields_attributes)
   end
 end

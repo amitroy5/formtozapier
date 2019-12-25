@@ -4,8 +4,10 @@
   <% end %>
 
   <%= f.input :name %>
+  <%= f.input :zapierapi %>
   <div id="links">
     <p><strong><%= link_to_add_association 'Add Field', f, :form_fields %></strong></p>
   </div>
+  <hr />
   <%= f.submit %>
 <% end %>

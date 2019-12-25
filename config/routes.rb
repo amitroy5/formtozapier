@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   root 'static_pages#index'
   resources :forms
   resources :zapier_forms
+  resources :zapier_submissions
 end
